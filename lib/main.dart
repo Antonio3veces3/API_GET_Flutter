@@ -3,9 +3,11 @@ import 'package:flutter_application_api/Models/gif.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
-void main() => runApp(MyApp());
+void main() => runApp(const MyApp());
 
 class MyApp extends StatefulWidget {
+  const MyApp({Key? key}) : super(key: key);
+
   @override
   _MyAppState createState() => _MyAppState();
 }
@@ -26,6 +28,7 @@ class _MyAppState extends State<MyApp> {
           Gif(item["title"], item["images"]["downsized"]["url"])
         );
       }
+    // ignore: avoid_print
     print(jsonData["data"][0]["images"]["downsized"]["url"]);
     return gifs;
     
